@@ -7,6 +7,11 @@
     "build"
   ],
   "license": "MIT",
+  "author": {
+    "name": "Arsam Sarabi",
+    "email": "arsamsarabi@me.com",
+    "url": "https://github.com/arsamsarabi"
+  },
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
