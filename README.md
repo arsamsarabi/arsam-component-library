@@ -1,7 +1,6 @@
-# arsam-react-components
+# arsam-component-library
 
 > Collection of reuseable react components.
-
 
 ## People
 

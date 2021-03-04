@@ -23,7 +23,7 @@ describe('<HelloWorld />', () => {
   })
 
   it('Should say hello to Arsam', () => {
-    props.name = 'Arsam'
+    delete props.name
     const { getByTestId } = renderComponent()
 
     const HelloWorld = getByTestId('hello-message')
