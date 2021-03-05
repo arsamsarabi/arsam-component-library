@@ -8,6 +8,7 @@ export type ToggleProps = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
   name?: string
   color?: ThemeModes
+  disabled?: boolean
 }
 
 const Toggle: FC<ToggleProps> = ({
@@ -15,13 +16,18 @@ const Toggle: FC<ToggleProps> = ({
   value,
   name = 'acl-toggle',
   color = 'primary',
+  disabled = false,
 }) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!disabled) onChange(e)
+  }
+
   return (
     <ToggleWrapper>
       <Input
         type="checkbox"
         checked={value}
-        onChange={onChange}
+        onChange={handleChange}
         id={name}
         name={name}
         data-testid="acl-input"
@@ -31,6 +37,7 @@ const Toggle: FC<ToggleProps> = ({
         data-testid="acl-label"
         checked={value}
         color={color}
+        disabled={disabled}
       >
         <Indicator />
       </Label>

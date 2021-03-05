@@ -32,6 +32,7 @@ const Template: Story<ToggleProps & WithTheme> = ({
   name,
   color,
   theme = {},
+  disabled = false,
 }) => {
   const [val, setVal] = useState(false)
   return (
@@ -41,6 +42,7 @@ const Template: Story<ToggleProps & WithTheme> = ({
         color={color}
         value={val}
         onChange={(e) => setVal(e.target.checked)}
+        disabled={disabled}
       />
     </ThemeProvider>
   )
@@ -59,4 +61,10 @@ CustomTheme.args = {
       primary: '#A3CB38',
     },
   },
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  name: 'disabled-toggle',
+  disabled: true,
 }
