@@ -1,3 +1,4 @@
 import HelloWorld from './HelloWorld'
+import Toggle from './Toggle'
 
-export { HelloWorld }
+export { HelloWorld, Toggle }
