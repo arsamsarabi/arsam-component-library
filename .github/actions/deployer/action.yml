@@ -4,4 +4,4 @@ author: "arsamsarabi@me.com"
 
 runs:
   using: "docker"
-  image: "Dockerfile"
+  image: "../../../Dockerfile"
