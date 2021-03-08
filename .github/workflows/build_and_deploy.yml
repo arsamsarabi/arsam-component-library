@@ -32,7 +32,7 @@ jobs:
         with:
           name: artifacts-to-publish
           path: |
-            build
+            build/
             package.json
             README.md
 
