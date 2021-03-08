@@ -1,7 +1,0 @@
-name: "Deployer"
-description: "Deploys the library to Github Packages"
-author: "arsamsarabi@me.com"
-
-runs:
-  using: "docker"
-  image: "../../../Dockerfile"

@@ -41,8 +41,15 @@ jobs:
     needs: build-test-lint
 
     steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15.x"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@arsamsarabi"
       - name: Download publish artifacts
         uses: actions/download-artifact@v2
         with:
           name: artifacts-to-publish
       - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
