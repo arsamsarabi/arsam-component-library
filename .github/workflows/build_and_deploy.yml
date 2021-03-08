@@ -38,5 +38,5 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 15.x
-      - run: chmod +x ./entrypoint.sh
-      - run: ./entrypoint.sh
+      - run: chmod +x ./scripts/entrypoint.sh
+      - run: ./scripts/entrypoint.sh
