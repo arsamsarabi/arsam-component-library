@@ -32,11 +32,5 @@ jobs:
     needs: build-test-lint
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Use Node.js 15.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 15.x
-      - run: chmod +x ./scripts/entrypoint.sh
-      - run: ./scripts/entrypoint.sh
+      - uses: actions/checkout@v1
+      - uses: ./.github/actions/deployer
