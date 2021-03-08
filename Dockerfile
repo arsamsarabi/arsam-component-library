@@ -9,6 +9,7 @@ ENV PATH="./node_modules/.bin:$PATH"
 COPY . ./
 RUN yarn build
 
-ADD .github/actions/deployer/deployer.sh /deployer.sh
-RUN chmod +x /deployer.sh
-ENTRYPOINT ["/deployer.sh"]
+RUN npm publish
+# ADD .github/actions/deployer/deployer.sh /deployer.sh
+# RUN chmod +x /deployer.sh
+# ENTRYPOINT ["/deployer.sh"]
