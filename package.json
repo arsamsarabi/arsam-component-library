@@ -1,6 +1,6 @@
 {
-  "name": "@arsamsarabi/arsam-react-components",
-  "version": "0.0.1",
+  "name": "@arsamsarabi/arsam-component-library",
+  "version": "0.0.2",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "files": [
