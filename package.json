@@ -3,9 +3,6 @@
   "version": "0.0.4",
   "main": "build/index.js",
   "module": "build/index.es.js",
-  "files": [
-    "build"
-  ],
   "typings": "build/**/*.d.ts",
   "license": "MIT",
   "author": {
