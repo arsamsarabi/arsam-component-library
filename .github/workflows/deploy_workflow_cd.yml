@@ -26,6 +26,6 @@ jobs:
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
       - run: yarn
-      - run: yarn build
-      - run: yarn pack
-      - run: yarn publish arsam-component-library-v${{steps.package-version.outputs.current-version}}.tgz
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
