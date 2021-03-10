@@ -1,4 +1,4 @@
-name: Verify and Deploy CD
+name: Deploy CD
 
 on:
   push:
