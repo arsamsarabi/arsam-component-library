@@ -1,5 +1,5 @@
 {
-  "name": "@alinea-os/arsam-component-library",
+  "name": "arsam-component-library",
   "version": "0.0.14",
   "main": "build/index.js",
   "module": "build/index.es.js",
