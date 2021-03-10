@@ -7,6 +7,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -20,13 +22,10 @@ jobs:
           node-version: 15.x
           registry-url: "https://registry.npmjs.org"
           always-auth: true
-          scope: "@alinea-os"
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
       - run: yarn
       - run: yarn build
       - run: yarn pack
-      - run: yarn publish arsamsarabi-arsam-component-library-v${{steps.package-version.outputs.current-version}}.tgz
+      - run: yarn publish arsamsarabi-arsam-component-library-v${{steps.package-version.outputs.current-version}}.tgz  --access public
