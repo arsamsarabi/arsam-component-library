@@ -1,10 +1,10 @@
 {
   "name": "@arsamsarabi/arsam-component-library",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "files": [
-    "build"
+    "/build"
   ],
   "typings": "build/**/*.d.ts",
   "license": "MIT",
