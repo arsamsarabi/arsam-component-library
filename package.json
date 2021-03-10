@@ -26,7 +26,8 @@
     "prettier": "npx prettier --write src",
     "eslint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "stylelint": "stylelint './src/**/*.ts'",
-    "lint": "yarn stylelint && yarn eslint && yarn prettier"
+    "lint": "yarn stylelint && yarn eslint && yarn prettier",
+    "prepublishOnly": "yarn build && npm pack"
   },
   "peerDependencies": {
     "react": "^17.0.1",
