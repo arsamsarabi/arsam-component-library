@@ -20,5 +20,7 @@ jobs:
         with:
           node-version: 15.x
       - run: yarn
+        env:
+          NPM_PUBLISHER: ${{ secrets.NPM_PUBLISHER }}
       - run: yarn test
       - run: yarn lint
