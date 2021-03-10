@@ -40,10 +40,14 @@ jobs:
           node-version: "15.x"
           registry-url: "https://npm.pkg.github.com"
           scope: "@arsamsarabi"
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
       - name: Download publish artifacts
         uses: actions/download-artifact@v2
         with:
           name: build
-      - run: npm publish
+      - run: yarn pack
+      - run: yarn publish arsamsarabi-arsam-component-library-v${{steps.package-version.outputs.current-version}}.tgz
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
