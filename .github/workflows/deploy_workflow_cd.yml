@@ -28,4 +28,4 @@ jobs:
       - run: yarn
       - run: yarn build
       - run: yarn pack
-      - run: yarn publish arsam-component-library-v${{steps.package-version.outputs.current-version}}.tgz  --access public
+      - run: yarn publish arsam-component-library-v${{steps.package-version.outputs.current-version}}.tgz
