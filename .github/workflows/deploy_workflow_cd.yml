@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: "15.x"
           registry-url: "https://registry.npmjs.org"
+          always-auth: true
       - uses: actions/cache@v2
         with:
           path: "**/node_modules"
@@ -23,6 +24,6 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
       - name: Publish package
-        run: npm publish
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
