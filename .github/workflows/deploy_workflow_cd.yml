@@ -7,8 +7,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      NPM_PUBLISHER: ${{ secrets.NPM_PUBLISHER }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -23,6 +21,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           always-auth: true
           scope: "@alinea-os"
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISHER }}" > ~/.npmrc
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
