@@ -1,12 +1,12 @@
 {
   "name": "arsam-component-library",
-  "version": "0.0.15",
-  "main": "build/index.js",
-  "module": "build/index.es.js",
+  "version": "0.0.16",
+  "main": "./build/index.js",
+  "module": "./build/index.es.js",
+  "types": "./build/index.d.ts",
   "files": [
     "build"
   ],
-  "types": "build/index.d.ts",
   "license": "MIT",
   "author": {
     "name": "Arsam Sarabi",
