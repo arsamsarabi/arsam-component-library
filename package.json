@@ -1,11 +1,12 @@
 {
   "name": "arsam-component-library",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "main": "./build/index.js",
   "module": "./build/index.es.js",
-  "types": "./build/index.d.ts",
+  "types": "./lib/index.d.ts",
   "files": [
-    "build"
+    "build",
+    "lib"
   ],
   "license": "MIT",
   "author": {
@@ -18,7 +19,8 @@
     "url": "https://github.com/arsamsarabi/arsam-component-library.git"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rimraf build && rollup -c",
+    "build:lib": "rimraf lib && tsc --p tsconfig.lib.json",
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
@@ -27,7 +29,7 @@
     "eslint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "stylelint": "stylelint './src/**/*.ts'",
     "lint": "yarn stylelint && yarn eslint && yarn prettier",
-    "prepublishOnly": "yarn build && npm pack"
+    "prepublishOnly": "yarn build && yarn build:lib && npm pack"
   },
   "peerDependencies": {
     "react": "^17.0.1",
@@ -63,8 +65,8 @@
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.40.0",
-    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-typescript2": "^0.30.0",

@@ -116,4 +116,5 @@ dist
 .pnp.*
 
 build
+lib
 .DS_Store
